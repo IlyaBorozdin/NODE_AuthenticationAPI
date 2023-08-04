@@ -1,0 +1,23 @@
+{
+  "name": "node_authentication_api",
+  "version": "1.0.0",
+  "description": "This API tutorial project shows user authentication technology.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IlyaBorozdin/NODE_AuthenticationAPI"
+  },
+  "author": "ILYA_B",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IlyaBorozdin/NODE_AuthenticationAPI/issues"
+  },
+  "homepage": "https://github.com/IlyaBorozdin/NODE_AuthenticationAPI",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
