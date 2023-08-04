@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="../transitions.css">
+    <script src="appUp.js"></script>
+    <script src="../transitions.js"></script>
+</head>
+<body>
+    <div class="container transition-fade">
+        <h1>Sign Up</h1>
+
+        <form id="form">
+            <label for="login">Username:</label>
+            <input type="text" id="login" name="login" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <div class="buttons">
+                <a href="./index.html" id="signIn">Sign In</a>
+                <button type="submit" id="signUp">Sign Up</button>
+            </div>
+
+            <div class="error-message">
+                <p id="errorText"></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

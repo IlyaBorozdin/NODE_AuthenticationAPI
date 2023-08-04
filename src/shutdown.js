@@ -6,6 +6,7 @@ const exit = (exitCode) => {
 };
 
 function shutdown(server) {
+    
     process.on('uncaughtException', (err) => {
         console.error('Uncaught exception:', err);
         gracefulShutdown(server, () => {
