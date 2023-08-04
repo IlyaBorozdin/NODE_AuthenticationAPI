@@ -7,6 +7,9 @@ certificates/
 # Ignore any log files
 *.log
 
+# Ignore local environment
+.env
+
 # Ignore IDE-specific files
 .vscode/
 .idea/
