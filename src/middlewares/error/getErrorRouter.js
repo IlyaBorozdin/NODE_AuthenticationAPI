@@ -1,7 +1,7 @@
 const express = require('express');
 
-const NotFoundError = require('../../logic/serverError/notFound');
-const ServerError = require('../../logic/serverError/server');
+const NotFoundError = require('../../services/errors/notFound');
+const ServerError = require('../../services/errors/server');
 
 function getErrorRouter() {
     const errorRouter = express.Router();

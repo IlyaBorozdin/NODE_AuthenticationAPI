@@ -1,6 +1,6 @@
 const mysql = require('mysql2');
 
-const StorageError = require('../logic/serverError/storage');
+const StorageError = require('../services/errors/storage');
 
 const connection = mysql.createConnection({
     host: process.env.DB_HOST,

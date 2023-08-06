@@ -1,5 +1,5 @@
 const path = require('path');
-const PageError = require('../../logic/serverError/page');
+const PageError = require('../../services/errors/page');
 
 function getHandler(indexPath) {
     return (req, res, next) => {
