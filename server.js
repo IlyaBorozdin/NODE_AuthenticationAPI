@@ -8,19 +8,20 @@ const path = require('path');
 
 const shutdown = require('./src/shutdown');
 
+const loggerHandler = require('./src/middlewares/logger/handler');
 const homepageRouter = require('./src/routers/homepage/homepage');
-const errorRouter = require('./src/routers/error/router');
-
-const debugMode = process.env.DEBUG_MODE === 'true' || false;
-const logLevel = process.env.LOG_LEVEL || 'info';
+const apiRouter = require('./src/routers/api/api');
+const errorRouter = require('./src/middlewares/error/routerJSON');
 
 const app = express();
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'public'))
+app.set('views', path.join(__dirname, 'public'));
 
 app.use(express.json());
+app.use(loggerHandler);
 app.use('/', homepageRouter);
+app.use('/api', apiRouter);
 app.use(errorRouter);
 
 const keyPath = path.join(__dirname, 'certificates', 'localhost.key');
