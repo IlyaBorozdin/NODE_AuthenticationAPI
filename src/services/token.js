@@ -12,7 +12,7 @@ class Token {
     save(userId) {
         return this.insertToken(userId)
             .then((id) => {
-                return { userId: userId, refreshToken: this.refreshToken };
+                return this;
             })
             .catch((err) => {
                 throw err;

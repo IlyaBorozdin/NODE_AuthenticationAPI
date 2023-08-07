@@ -12,7 +12,9 @@ const shutdown = require('./src/shutdown');
 const loggerHandler = require('./src/middlewares/logger/handler');
 const homepageRouter = require('./src/routers/homepage/homepage');
 const apiRouter = require('./src/routers/api/api');
-const errorRouter = require('./src/middlewares/error/routerJSON');
+const NotFoundError = require('./src/services/errors/notFound');
+const errorHandlerConv = require('./src/middlewares/error/handlerConv');
+const errorHandlerJSON = require('./src/middlewares/error/handlerJSON');
 
 const app = express();
 
@@ -24,7 +26,11 @@ app.use(cors());
 app.use(loggerHandler);
 app.use('/', homepageRouter);
 app.use('/api', apiRouter);
-app.use(errorRouter);
+app.use((req, res, next) => {
+    next(new NotFoundError('Not Found', req.url));
+});
+app.use(errorHandlerConv);
+app.use(errorHandlerJSON);
 
 const keyPath = path.join(__dirname, 'certificates', 'localhost.key');
 const certPath = path.join(__dirname, 'certificates', 'localhost.crt');
