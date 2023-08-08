@@ -30,7 +30,7 @@ class Email {
                     text: '',
                     html: mailData.replace(
                         '{link}',
-                        `${process.env.BASE_URL}/api/activate/${link}`
+                        `${process.env.BASE_URL}/api/user/activate/${link}`
                     )
                 });
             })

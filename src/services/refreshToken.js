@@ -12,7 +12,7 @@ const verify = util.promisify(jwt.verify);
 
 class RefreshToken {
     constructor({ refreshToken }) {
-        console.log(refreshToken);
+        this.refreshToken = refreshToken;
     }
 
     refresh() {

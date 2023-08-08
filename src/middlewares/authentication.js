@@ -9,7 +9,7 @@ const authentication = (req, res, next) => {
     const authHeader = req.headers.authorization;
     const accessToken = authHeader?.split(' ')?.[1];
 
-    verify(accessToken, process.env.JWT_ACCESS_KEY)
+    return verify(accessToken, process.env.JWT_ACCESS_KEY)
         .then((decoded) => {
             req.user = decoded;
             return next();

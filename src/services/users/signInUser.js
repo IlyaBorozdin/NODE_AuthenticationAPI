@@ -23,8 +23,7 @@ class SignInUser {
                 }
 
                 throw new ClientError(
-                    'Oops! It seems there was an issue with your login attempt. Please double-check your credentials and try again. If you haven\'t registered yet, please sign up to create an account. If you\'re still having trouble, feel free to contact our support team.',
-                    401
+                    'Oops! It seems there was an issue with your login attempt. Please double-check your credentials and try again. If you haven\'t registered yet, please sign up to create an account. If you\'re still having trouble, feel free to contact our support team.'
                 );
             })
             .then((isMatch) => {
@@ -34,8 +33,7 @@ class SignInUser {
                 }
 
                 throw new ClientError(
-                    'Oops! It looks like the password you entered is incorrect. Please double-check your password and try again. If you continue to have trouble, you can reset your password or contact our support team for assistance.',
-                    401
+                    'Oops! It looks like the password you entered is incorrect. Please double-check your password and try again. If you continue to have trouble, you can reset your password or contact our support team for assistance.'
                 );
             })
             .catch((err) => {

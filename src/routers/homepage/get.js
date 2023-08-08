@@ -1,4 +1,3 @@
-const path = require('path');
 const PageError = require('../../services/errors/page');
 
 function getHandler(indexPath) {

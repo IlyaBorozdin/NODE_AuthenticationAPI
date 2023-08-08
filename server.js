@@ -3,6 +3,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 const https = require('https');
 const fs = require('fs').promises;
 const path = require('path');
@@ -15,6 +16,7 @@ const apiRouter = require('./src/routers/api/api');
 const NotFoundError = require('./src/services/errors/notFound');
 const errorHandlerConv = require('./src/middlewares/error/handlerConv');
 const errorHandlerJSON = require('./src/middlewares/error/handlerJSON');
+const profileRouter = require('./src/routers/profile/profile');
 
 const app = express();
 
@@ -23,9 +25,11 @@ app.set('views', path.join(__dirname, 'public'));
 
 app.use(express.json());
 app.use(cors());
+app.use(cookieParser());
 app.use(loggerHandler);
 app.use('/', homepageRouter);
 app.use('/api', apiRouter);
+app.use('/profile', profileRouter);
 app.use((req, res, next) => {
     next(new NotFoundError('Not Found', req.url));
 });
