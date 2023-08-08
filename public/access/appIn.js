@@ -1,4 +1,3 @@
-/*
 const BASE_URL = 'https://localhost:443'
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -27,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then((tokens) => {
                 errorText.innerHTML = '';
                 localStorage.setItem('accessToken', tokens.accessToken);
-                
+                location.href = BASE_URL + '/profile';
                 return;
             })
             .catch((err) => {
@@ -36,4 +35,3 @@ document.addEventListener("DOMContentLoaded", () => {
             });        
     });
 });
-*/

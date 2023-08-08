@@ -1,4 +1,3 @@
-/*
 const BASE_URL = 'https://localhost:443'
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -41,4 +40,3 @@ document.addEventListener("DOMContentLoaded", () => {
             });        
     });
 });
-*/
