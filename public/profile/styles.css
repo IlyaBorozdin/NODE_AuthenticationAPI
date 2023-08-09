@@ -47,3 +47,22 @@ button {
     transition: background-color 0.3s ease, transform 0.2s ease;
     margin-right: 10px;
 }
+
+.buttons button {
+    background-color: #4CAF50;
+    min-width: 100px;
+    margin-right: 0;
+}
+
+.buttons button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.error-message {
+    margin-top: 10px;
+}
+
+#errorText {
+    color: red;
+}

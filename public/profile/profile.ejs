@@ -2,19 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Oops!</title>
+    <title>Profile</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="../transitions.css">
-    <script src="../transitions.js"></script>
 </head>
 <body>
-    <div class="container transition-fade">
+    <div class="container">
         <h1 class="text">Hello, <%= name %>!</h1>
         <p class="text">Your email: <%= email %></p>
-        <p class="text">Email state: <%= isActivated %></p>
 
         <div class="buttons">
-            <button id="backButton" onclick="window.history.back();">Back</button>
+            <button id="signOut">Sign Out</button>
+        </div>
+
+        <div class="error-message">
+            <p id="errorText"></p>
         </div>
     </div>
 </body>

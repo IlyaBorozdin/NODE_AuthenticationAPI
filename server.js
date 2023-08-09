@@ -17,6 +17,7 @@ const NotFoundError = require('./src/services/errors/notFound');
 const errorHandlerConv = require('./src/middlewares/error/handlerConv');
 const errorHandlerJSON = require('./src/middlewares/error/handlerJSON');
 const profileRouter = require('./src/routers/profile/profile');
+const spaRouter = require('./src/routers/spa/spa');
 
 const app = express();
 
@@ -27,7 +28,8 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 app.use(loggerHandler);
-app.use('/', homepageRouter);
+app.use('/', spaRouter);
+app.use('/access', homepageRouter);
 app.use('/api', apiRouter);
 app.use('/profile', profileRouter);
 app.use((req, res, next) => {

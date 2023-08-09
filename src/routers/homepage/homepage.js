@@ -13,7 +13,7 @@ const homepageRouter = express.Router();
 homepageRouter.use(express.static(publicDir));
 homepageRouter.use(express.static(path.join(publicDir, 'access')));
 homepageRouter.use(express.static(path.join(publicDir, 'error')));
-homepageRouter.get('/', getHandler(path.join(publicDir, 'access', 'index.html')));
+homepageRouter.get('/', getHandler(path.join(publicDir, 'access', 'signIn.html')));
 
 homepageRouter.use(errorHandlerConv);
 homepageRouter.use(errorHandlerHTML);
